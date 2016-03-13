@@ -7,11 +7,11 @@ var objSkillBoxArray = {
 }
 
 $(document).ready(function(){
-  console.log("jQuery works");
+  
   $('.display').text("0");
   $('.clearall').on('click', clearAll);
   $('.numbers, .operators').not('negative').on('click', getNumber);
-   var greeting = {"greeting": "Hi"};
+
   $.ajax({
         type: "POST",
         url: "/calc",
