@@ -1,0 +1,44 @@
+.container {
+  width: 236px;
+  height: 439px;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  background-color: #ddd;
+  margin-top: 50px;
+  padding-left: 20px;
+}
+.row {
+  margin-bottom: 5px;
+}
+.btn {
+  margin: 5px;
+  float: left;
+}
+.numbers, .operators {
+  font-size: 2em;
+  width: 45px;
+	height: 45px;
+}
+
+.clearall, .equal {
+  font-size: 2em;
+  width: 100px;
+  height: 45px;
+}
+
+.display {
+    height: 50px;
+    width: 210px;
+    background-color:white;
+    margin: 0 0 10px 5px;
+    padding-left: 0;
+
+    text-align: right;
+    font-size: 37px;
+    line-height: 42px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.small-text {
+  font-size: 20px;
+}
