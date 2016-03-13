@@ -2,25 +2,15 @@ var x = '';
 var y = '';
 var operator = '';
 var print = '';
-var objSkillBoxArray = {
-    "skills": ["Front End","Clientside Logic", "Serverside Logic"]
-}
+var calcData = {};
 
 $(document).ready(function(){
-  
+
   $('.display').text("0");
   $('.clearall').on('click', clearAll);
-  $('.numbers, .operators').not('negative').on('click', getNumber);
-
-  $.ajax({
-        type: "POST",
-        url: "/calc",
-        dataType: "json",
-        data: objSkillBoxArray,
-        success: function(data){
-          console.log(data);
-        }
-    });
+  $('.numbers').on('click', getNumber);
+  $('.operators').not('.negative').on('click', getOperator);
+  $('.equal').on('click', calculate);
 });
 
 function clearAll(){
@@ -46,4 +36,34 @@ function getNumber(){
     return;
   }
   $('.display').empty().text(print);
+}
+
+function getOperator(){
+  operator = '';
+  operator = $(this).text();
+  x = $('.display').text();
+  $('.display').text("0");
+  print = '';
+  console.log(x, operator);
+
+}
+
+function calculate(){
+  y = $('.display').text();
+  print = '';
+  calcData = {"x": x, "operator": operator, "y": y};
+  send();
+}
+
+function send(){
+  $.ajax({
+        type: "POST",
+        url: "/calc",
+        dataType: "json",
+        data: calcData,
+        success: function(data){
+          console.log(data);
+          calcData = {};
+        }
+    });
 }
