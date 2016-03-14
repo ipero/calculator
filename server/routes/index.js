@@ -1,13 +1,40 @@
 var express = require ("express");
 var router = express.Router();
 var path = require("path");
+var subtrac = require("./calculate.js");
+var x = 0;
+var y = 0;
+var answer = "";
 
+router.post("/subtrac", function(req,res){
+    x = parseFloat(req.body.x);
+    y = parseFloat(req.body.y);
+    answer = (x - y).toString();
+    res.send(answer);
 
-router.post("/calc", function(req,res){
+});
 
-    console.log("what is our request", req.body);
+router.post("/add", function(req,res){
+    x = parseFloat(req.body.x);
+    y = parseFloat(req.body.y);
+    answer = (x + y).toString();
+    res.send(answer);
 
-    res.send("Sent");
+});
+
+router.post("/multiply", function(req,res){
+    x = parseFloat(req.body.x);
+    y = parseFloat(req.body.y);
+    answer = (x * y).toString();
+    res.send(answer);
+
+});
+
+router.post("/divide", function(req,res){
+    x = parseFloat(req.body.x);
+    y = parseFloat(req.body.y);
+    answer = (x / y).toString();
+    res.send(answer);
 
 });
 
