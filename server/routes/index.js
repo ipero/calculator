@@ -1,7 +1,6 @@
 var express = require ("express");
 var router = express.Router();
 var path = require("path");
-var subtrac = require("./calculate.js");
 var x = 0;
 var y = 0;
 var answer = "";
