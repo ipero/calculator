@@ -17,7 +17,7 @@ $(document).ready(function(){
 function makeNegativeNum (){
 
   //check if number is already negative
-  if(print.indexOf("-") == -1){    
+  if(print.indexOf("-") == -1){
     print = "-" + print;
   }else{  //if yes, remove negative sign
     print = print.slice(1, print.length);
@@ -66,12 +66,16 @@ function getNumber(){
 }
 
 function getOperator(){
-  operator = '';
-  operator = $(this).text();
-  x = $('.display').text();
-  $('.display').text("0");
-  print = '';
-
+  // chech if operator has value already, if yes => change it
+  if(operator.length>0){
+    operator = '';
+    operator = $(this).text();
+  }else{ // if not => store operator 
+    operator = $(this).text();
+    x = $('.display').text();
+    $('.display').text("0");
+    print = '';
+  }
 
 }
 
