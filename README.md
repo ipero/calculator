@@ -1,5 +1,6 @@
 # Server-side calculator
 
+[Live Demo of completed challenge with hard and pro modes ](http://still-reef-70078.herokuapp.com)
 ## Description
 Welcome to your third weekend challenge!
 
@@ -52,5 +53,3 @@ router.post('/division', function(req, res){
 //some code here
 
 });
-
-[Demo link] (http://still-reef-70078.herokuapp.com)
